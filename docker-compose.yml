@@ -4,6 +4,8 @@ services:
     image: zookeeper
     ports:
       - 2181:2181
+  ch_client:
+    image: yandex/clickhouse-client
   ch1:
     build:
       context: .
