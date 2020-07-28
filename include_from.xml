@@ -1,31 +1,43 @@
 <yandex>
     <clickhouse_remote_servers>
-        <cluster_first>
+        <cluster_facing>
             <!-- shard 01 -->
             <shard>
                 <replica>
-                    <host>ch1</host>
+                    <priority>1</priority>
+                    <host>ch_aws_1</host>
                     <port>9000</port>
                 </replica>
                 <replica>
-                    <host>ch2</host>
+                    <priority>1</priority>
+                    <host>ch_aws_2</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <priority>0</priority>
+                    <host>ch_hetzner_1</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <priority>0</priority>
+                    <host>ch_hetzner_2</host>
                     <port>9000</port>
                 </replica>
             </shard>
-        </cluster_first>
-        <cluster_second>
+        </cluster_facing>
+        <cluster_computation>
             <!-- shard 02 -->
             <shard>
-                <replica>
-                    <host>ch3</host>
-                    <port>9000</port>
-                </replica>
-                <replica>
-                    <host>ch4</host>
-                    <port>9000</port>
-                </replica>
+              <replica>
+                  <host>ch_hetzner_1</host>
+                  <port>9000</port>
+              </replica>
+              <replica>
+                  <host>ch_hetzner_2</host>
+                  <port>9000</port>
+              </replica>
             </shard>
-        </cluster_second>
+        </cluster_computation>
     </clickhouse_remote_servers>
 
     <zookeeper-servers>

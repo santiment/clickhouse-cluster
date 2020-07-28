@@ -6,53 +6,55 @@ services:
       - 2181:2181
   ch_client:
     image: yandex/clickhouse-client
-  ch1:
+  ch_aws_1:
     build:
       context: .
       dockerfile: Dockerfile.ch
+      args:
+        SHARD_CONFIG: 'ch_aws_1_config.xml'
     depends_on:
       - zookeeper
     ports:
       - 8811:8123
       - 9011:9000
     volumes:
-      - ./ch1_volume:/var/lib/clickhouse
-  ch2:
+      - ./ch_aws_1_volume:/var/lib/clickhouse
+  ch_aws_2:
     build:
       context: .
       dockerfile: Dockerfile.ch
       args:
-        SHARD: 2
+        SHARD_CONFIG: 'ch_aws_2_config.xml'
     depends_on:
       - zookeeper
     ports:
       - 8812:8123
       - 9012:9000
     volumes:
-      - "./ch2_volume:/var/lib/clickhouse"
-  ch3:
+      - "./ch_aws_2_volume:/var/lib/clickhouse"
+  ch_hetzner_1:
     build:
       context: .
       dockerfile: Dockerfile.ch
       args:
-        SHARD: 3
+        SHARD_CONFIG: 'ch_hetzner_1_config.xml'
     depends_on:
       - zookeeper
     ports:
       - 8813:8123
       - 9013:9000
     volumes:
-      - "./ch3_volume:/var/lib/clickhouse"
-  ch4:
+      - "./ch_hetzner_1_volume:/var/lib/clickhouse"
+  ch_hetzner_2:
     build:
       context: .
       dockerfile: Dockerfile.ch
       args:
-        SHARD: 4
+        SHARD_CONFIG: 'ch_hetzner_2_config.xml'
     depends_on:
       - zookeeper
     ports:
       - 8814:8123
       - 9014:9000
     volumes:
-      - "./ch4_volume:/var/lib/clickhouse"
+      - "./ch_hetzner_2_volume:/var/lib/clickhouse"

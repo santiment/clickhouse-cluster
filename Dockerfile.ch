@@ -44,12 +44,10 @@ ENV LC_ALL en_US.UTF-8
 RUN mkdir /docker-entrypoint-initdb.d
 
 # Copy the correct cluster config file across.
-# this method handles a non-existing config file, as the base repo
-# didn't use one in shard one, however it seems to be necessary!
-ARG SHARD=1
-RUN echo "./ch${SHARD}_config.xml*"
-COPY ["./nill", "./ch${SHARD}_config.xml*", "/etc/clickhouse-server/tmp/"]
-RUN if [ -f "/etc/clickhouse-server/tmp/ch${SHARD}_config.xml" ]; then mv "etc/clickhouse-server/tmp/ch${SHARD}_config.xml" /etc/clickhouse-server/config.xml; fi
+ARG SHARD_CONFIG
+RUN echo "./${SHARD_CONFIG}*"
+COPY ["./nill", "./${SHARD_CONFIG}*", "/etc/clickhouse-server/tmp/"]
+RUN if [ -f "/etc/clickhouse-server/tmp/${SHARD_CONFIG}" ]; then mv "etc/clickhouse-server/tmp/${SHARD_CONFIG}" /etc/clickhouse-server/config.xml; fi
 
 COPY ["./include_from.xml", "/etc/clickhouse-server/include_from.xml"]
 COPY ["./users.xml", "/etc/clickhouse-server/users.xml"]

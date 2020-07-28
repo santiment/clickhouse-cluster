@@ -1,11 +1,13 @@
-./invoke_sql.sh ch1 cluster_first_db.sql
-./invoke_sql.sh ch2 cluster_first_db.sql
-./invoke_sql.sh ch1 cluster_first_table.sql
-./invoke_sql.sh ch1 cluster_first_data.sql
+./invoke_sql.sh ch_aws_1 cluster_facing_db.sql
+./invoke_sql.sh ch_aws_2 cluster_facing_db.sql
+./invoke_sql.sh ch_hetzner_1 cluster_facing_db.sql
+./invoke_sql.sh ch_hetzner_2 cluster_facing_db.sql
 
-./invoke_sql.sh ch3 cluster_second_db.sql
-./invoke_sql.sh ch4 cluster_second_db.sql
-./invoke_sql.sh ch3 cluster_second_table.sql
-./invoke_sql.sh ch3 cluster_second_data.sql
+./invoke_sql.sh ch_aws_1 cluster_facing_table.sql
+./invoke_sql.sh ch_aws_1 cluster_facing_data.sql
 
-./invoke_sql.sh ch1 cluster_first_remote_table.sql
+./invoke_sql.sh ch_hetzner_1 cluster_computation_db.sql
+./invoke_sql.sh ch_hetzner_2 cluster_computation_db.sql
+
+./invoke_sql.sh ch_hetzner_1 cluster_computation_table.sql
+./invoke_sql.sh ch_hetzner_1 cluster_computation_data.sql
