@@ -13,16 +13,6 @@
                     <host>ch_aws_2</host>
                     <port>9000</port>
                 </replica>
-                <replica>
-                    <priority>0</priority>
-                    <host>ch_hetzner_1</host>
-                    <port>9000</port>
-                </replica>
-                <replica>
-                    <priority>0</priority>
-                    <host>ch_hetzner_2</host>
-                    <port>9000</port>
-                </replica>
             </shard>
         </cluster_facing>
         <cluster_computation>
