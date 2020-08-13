@@ -8,6 +8,8 @@
                     <host>ch_aws_1</host>
                     <port>9000</port>
                 </replica>
+            </shard>
+            <shard>
                 <replica>
                     <priority>1</priority>
                     <host>ch_aws_2</host>
@@ -22,6 +24,8 @@
                   <host>ch_hetzner_1</host>
                   <port>9000</port>
               </replica>
+            </shard>
+            <shard>
               <replica>
                   <host>ch_hetzner_2</host>
                   <port>9000</port>

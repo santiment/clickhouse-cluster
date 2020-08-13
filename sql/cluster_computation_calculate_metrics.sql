@@ -1,4 +1,4 @@
-INSERT INTO default.metrics (event_date, metric_id, value)
+INSERT INTO default.metrics_distributed (event_date, metric_id, value)
 SELECT event_date, metric_id, value FROM default.events
 INNER JOIN
 (

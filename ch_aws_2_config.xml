@@ -145,8 +145,8 @@
       -->
     <!-- <macros incl="macros" optional="true" /> -->
     <macros>
-        <shard>01</shard>
-        <replica>ch_aws_2</replica>
+        <shard>02</shard>
+        <host>ch_aws_2</host>
     </macros>
 
 
