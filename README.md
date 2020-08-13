@@ -7,12 +7,9 @@ Cluster structure is defined in the file `include_from.xml`.
 1. `cluster_facing`/db `default`/table `metrics`  
 1.1. `ch_aws_1`  
 1.2. `ch_aws_2`  
-1.3. `ch_hetzner_1`  
-1.4. `ch_hetzner_2`  
 2. `cluster_computation`/db `db_computation`/tables `metrics_metadata`, `events`  
 2.1. `ch_hetzner_1`  
 2.2. `ch_hetzner_2`  
-
 
 
 ## Usage
